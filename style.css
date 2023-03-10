@@ -1,5 +1,8 @@
 :root{
     --bkg-color1: rgb(255, 255, 255);
+
+    --bkg-btn-hover: orangered;
+    --color-btn-hover: white;
 }
 
 *{
@@ -45,6 +48,11 @@ main{
     height: 40px;
     width: 200px;
     color: white;
+    cursor: pointer;
+}
+.button:hover{
+    background-color: var(--bkg-btn-hover);
+    color: var(--color-btn-hover);
 }
 .inputf{
     border: solid 2px rgb(231, 231, 231);
@@ -87,6 +95,11 @@ main{
     background-color: black;
     color: white;
     font-size: 1.15em;
+    cursor: pointer;
+}
+#home #trip #buttons button:hover{
+    background-color: var(--bkg-btn-hover);
+    color: var(--color-btn-hover);
 }
 #home #trip #buttons button:first-child{
     background-color: orangered;
@@ -122,6 +135,10 @@ main{
 #home #trip #btn-travel{
     background-color: gray;
     width: 200px;
+}
+#home #trip #btn-travel:hover{
+    background-color: var(--bkg-btn-hover);
+    color: var(--color-btn-hover);
 }
 
 /*                  #offers                  */
@@ -215,6 +232,10 @@ main{
     color: black;
     width: 100px;
 }
+#offers .bloco-de-imagens2 .legenda .button:hover{
+    background-color: var(--bkg-btn-hover);
+    color: var(--color-btn-hover);
+}
 
 /*                  #getemail                  */
 #getemail{
@@ -244,8 +265,12 @@ main{
     color: rgb(219, 219, 219);
 }
 #getemail div input{}
-#getemail div button{
+#getemail div .button{
     background-color: rgb(255, 106, 106);
+}
+#getemail div .button:hover{
+    background-color: var(--bkg-btn-hover);
+    color: var(--color-btn-hover);
 }
 
 
