@@ -1,11 +1,23 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@300&display=swap');
+
+
 :root{
     --bkg-color1: rgb(255, 255, 255);
 
     --bkg-btn-hover: orangered;
     --color-btn-hover: white;
+
+    
+    --color-title: black;
+    --color-name: rgb(39, 39, 39);
+    --color-legenda: white;
+
+    --ftitle: 'Raleway', sans-serif;
 }
 
 *{
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    color: rgb(53, 53, 53);
     margin: 0;
     padding: 0;
     border: 0;
@@ -16,21 +28,44 @@ body{
 /*                              Header                            */
 header{
     display: flex;
-    flex-flow: row wrap;
-    justify-content: space-around;
-    align-content: space-around;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
     width: 100%;
     background-color: var(--bkg-color1);
 }
 header #logo{
     color: orangered;
     font-size: 2em;
+    font-family: Arial, Helvetica, sans-serif;
+    display: flex;
+    flex-flow: row nowrap;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+}
+header #logo img{
+    display: inline-flex;
+    width: 50px;
+}
+header #mglass{display: flex; width: 35px;}
+header #mglass button{
+    cursor: pointer;
+}
+header #mglass img{
+    display: flex;
+    object-fit: cover;
+    width: 100%;
 }
 header .search{
     display: flex;
     height: 40px;
-    width: 50%;
+    width: 60%;
     margin-left: 35%;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
 }
 header .search input{
     height: 100%;
@@ -66,11 +101,15 @@ main{
     display: flex;
     flex-flow: column wrap;
     width: 100%;
-    height: 700px;
+    height: 900px;
 
     background: url("imagens/london.jpg");
     background-repeat: no-repeat;
-    background-size: 100%;
+    background-size: cover;
+}
+#home h2{
+    color: var(--color-title);
+    font-family: var(--ftitle);
 }
 #home #trip{
     margin: auto;
@@ -133,8 +172,12 @@ main{
     padding-left: 10px;
 }
 #home #trip #btn-travel{
-    background-color: gray;
-    width: 200px;
+    background-color: rgb(90, 90, 90);
+    color: rgb(250, 244, 244);
+    width: 220px;
+    padding: 5px;
+    font-family: Verdana, Tahoma, sans-serif;
+    font-size: 0.9em;
 }
 #home #trip #btn-travel:hover{
     background-color: var(--bkg-btn-hover);
@@ -149,6 +192,11 @@ main{
     justify-content: space-between;
     
     width: 80%;
+}
+#offers h2{
+    color: var(--color-title);
+    font-family: var(--ftitle);
+    font-size: 1em;
 }
 .text-left{
     display: flex;
@@ -212,20 +260,26 @@ main{
     bottom: 0;
     left: 1%;
     right: auto;
-    color: #fff;
     text-align: center;
     font-size: 1.2em;
     padding: 10px;
+    color: white;
 }
 #offers .bloco-de-imagens2 .legenda{
     display: flex;
     flex-flow: column wrap;
     row-gap: 1em;
     padding: 20px;
+    color: rgb(39, 39, 39);
+}
+#offers .bloco-de-imagens2 .legenda .h2{
+    font-family: var(--ftitle);
+    color: var(--color-title);
+    font-size: 1.5em;
 }
 #offers .bloco-de-imagens2 .price{
     font-size: medium;
-    color: rgb(126, 126, 126)
+    color: rgb(126, 126, 126);
 }
 #offers .bloco-de-imagens2 .legenda .button{
     background-color: white;
@@ -253,6 +307,7 @@ main{
     width: 95%;
     margin: auto;
     color: rgb(219, 219, 219);
+    font-family: var(--ftitle);
 }
 #getemail div{
     display: flex;
@@ -264,7 +319,6 @@ main{
 #getemail div p{
     color: rgb(219, 219, 219);
 }
-#getemail div input{}
 #getemail div .button{
     background-color: rgb(255, 106, 106);
 }
@@ -293,4 +347,70 @@ footer #contact form{
     display: flex;
     flex-flow: column wrap;
     row-gap: 1em;
+}
+footer #contact form .button{
+    background-color: black;
+    margin-bottom: 2em;
+    align-items: center;
+    justify-content: center;
+    align-content: center;
+    width: 170px;
+}
+
+
+/*                              Media Query                              */
+@media(max-width: 728px){
+    header .search{
+        margin-left: 0;
+    }
+    #home{
+        height: auto;
+        margin-top: 2em;
+    }
+    #home #trip{
+        width: 100%;
+    }
+    #home #trip #flight .search{
+        flex-direction: column;
+    }
+    #home #trip #btn-travel{
+        width: 60%;
+    } #home #trip .from-to{
+        width: 95%;
+    }
+
+    #offers{
+        width: 90%;
+    }
+    #offers .bloco-de-imagens, #offers .bloco-de-imagens2{
+        row-gap: 2em;
+    }
+    #offers .bloco-de-imagens-o, #offers .bloco-de-imagens-o .imagemp, #offers .bloco-de-imagens-o .imagemg{
+        width: 100%;
+        height: auto;
+        gap: 0;
+        row-gap: 2em;
+    }
+    #offers h2.text-left{margin-top: 6em;}
+
+
+
+    #getemail{
+        width: 90%;
+    }
+    #getemail div, #getemail h2{
+        width: 90%;
+        margin: auto;
+    }
+    #getemail .inputf{
+        width: 95%;
+    }
+
+
+    footer .inputf{
+        width: 100%;
+    }
+    footer, footer #contact{
+        width: 95%;
+    }
 }
